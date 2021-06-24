@@ -11,6 +11,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.GroupLayout;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import java.awt.Font;
+import javax.swing.JTextField;
+import java.awt.Color;
+import javax.swing.SwingConstants;
 
 public class FrmMain extends javax.swing.JFrame {
 
@@ -74,20 +81,88 @@ public class FrmMain extends javax.swing.JFrame {
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
+        
+        JLabel lblNewLabel = new JLabel("Today's exchange rates");
+        lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        
+        txtEUR = new JTextField();
+        txtEUR.setColumns(10);
+        
+        txtUSD = new JTextField();
+        txtUSD.setColumns(10);
+        
+        txtRSD = new JTextField();
+        txtRSD.setColumns(10);
+        
+        lblEUR = new JLabel();
+        lblEUR.setText("EUR");
+        lblEUR.setHorizontalAlignment(SwingConstants.CENTER);
+        lblEUR.setFont(new Font("Consolas", Font.BOLD, 14));
+        lblEUR.setBackground(new Color(204, 204, 204));
+        
+        lblUSD = new JLabel();
+        lblUSD.setText("USD");
+        lblUSD.setHorizontalAlignment(SwingConstants.CENTER);
+        lblUSD.setFont(new Font("Consolas", Font.BOLD, 14));
+        lblUSD.setBackground(new Color(204, 204, 204));
+        
+        lblRSD = new JLabel();
+        lblRSD.setText("RSD");
+        lblRSD.setHorizontalAlignment(SwingConstants.CENTER);
+        lblRSD.setFont(new Font("Consolas", Font.BOLD, 14));
+        lblRSD.setBackground(new Color(204, 204, 204));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblUsername, javax.swing.GroupLayout.DEFAULT_SIZE, 457, Short.MAX_VALUE)
+        	layout.createParallelGroup(Alignment.TRAILING)
+        		.addGroup(layout.createSequentialGroup()
+        			.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        				.addGroup(layout.createSequentialGroup()
+        					.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        						.addGroup(layout.createSequentialGroup()
+        							.addGap(155)
+        							.addComponent(lblRSD, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
+        						.addGroup(layout.createSequentialGroup()
+        							.addGap(128)
+        							.addGroup(layout.createParallelGroup(Alignment.TRAILING)
+        								.addComponent(lblEUR, GroupLayout.PREFERRED_SIZE, 81, GroupLayout.PREFERRED_SIZE)
+        								.addComponent(lblUSD, GroupLayout.PREFERRED_SIZE, 81, GroupLayout.PREFERRED_SIZE))
+        							.addGap(36)))
+        					.addGap(18)
+        					.addGroup(layout.createParallelGroup(Alignment.LEADING, false)
+        						.addComponent(txtEUR, GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
+        						.addComponent(txtUSD)
+        						.addComponent(txtRSD)))
+        				.addGroup(layout.createSequentialGroup()
+        					.addGap(69)
+        					.addComponent(lblUsername, GroupLayout.PREFERRED_SIZE, 728, GroupLayout.PREFERRED_SIZE))
+        				.addGroup(layout.createSequentialGroup()
+        					.addGap(306)
+        					.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 173, GroupLayout.PREFERRED_SIZE)))
+        			.addContainerGap(237, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(203, Short.MAX_VALUE)
-                .addComponent(lblUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36))
+        	layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(layout.createSequentialGroup()
+        			.addGap(29)
+        			.addComponent(lblNewLabel)
+        			.addGap(30)
+        			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(txtEUR, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(lblEUR, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE))
+        			.addGap(25)
+        			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(lblUSD, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(txtUSD, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+        			.addGap(17)
+        			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(lblRSD, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(txtRSD, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+        			.addPreferredGap(ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+        			.addComponent(lblUsername, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+        			.addGap(29))
         );
+        getContentPane().setLayout(layout);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -116,6 +191,12 @@ public class FrmMain extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuItemClient;
     private javax.swing.JMenuItem menuItemRiskType;
     private javax.swing.JMenu menuMain;
+    private JTextField txtEUR;
+    private JTextField txtUSD;
+    private JTextField txtRSD;
+    private JLabel lblEUR;
+    private JLabel lblUSD;
+    private JLabel lblRSD;
     // End of variables declaration//GEN-END:variables
 
     
@@ -136,11 +217,16 @@ public class FrmMain extends javax.swing.JFrame {
     public JLabel getLblUsername() {
         return lblUsername;
     }
-
-     
     
-
-   
+    public JLabel getLblEUR() {
+    	return lblEUR;
+    }
+    public JLabel getLblUSD() {
+    	return lblUSD;
+    }
+    public JLabel getLblRSD() {
+    	return lblRSD;
+    }
 }
     
     

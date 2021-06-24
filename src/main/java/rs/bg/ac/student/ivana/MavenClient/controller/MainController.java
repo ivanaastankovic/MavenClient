@@ -22,6 +22,7 @@ public class MainController {
     public void openForm(){
        frmMain.getLblUsername().setText((String) Cordinator.getInstance().getParam("ADMIN"));
         frmMain.setVisible(true);
+      //  frmMain.getLblEUR().
     }
 
     private void addActionListener() {
