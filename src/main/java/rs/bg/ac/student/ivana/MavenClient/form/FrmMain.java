@@ -85,11 +85,11 @@ public class FrmMain extends javax.swing.JFrame {
         JLabel lblNewLabel = new JLabel("Today's exchange rates");
         lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
         
-        txtEUR = new JTextField();
-        txtEUR.setColumns(10);
-        
         txtUSD = new JTextField();
         txtUSD.setColumns(10);
+        
+        txtEUR = new JTextField();
+        txtEUR.setColumns(10);
         
         txtRSD = new JTextField();
         txtRSD.setColumns(10);
@@ -118,20 +118,20 @@ public class FrmMain extends javax.swing.JFrame {
         		.addGroup(layout.createSequentialGroup()
         			.addGroup(layout.createParallelGroup(Alignment.LEADING)
         				.addGroup(layout.createSequentialGroup()
-        					.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        					.addGroup(layout.createParallelGroup(Alignment.LEADING, false)
         						.addGroup(layout.createSequentialGroup()
-        							.addGap(155)
-        							.addComponent(lblRSD, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
-        						.addGroup(layout.createSequentialGroup()
-        							.addGap(128)
-        							.addGroup(layout.createParallelGroup(Alignment.TRAILING)
+        							.addGap(134)
+        							.addGroup(layout.createParallelGroup(Alignment.LEADING)
         								.addComponent(lblEUR, GroupLayout.PREFERRED_SIZE, 81, GroupLayout.PREFERRED_SIZE)
         								.addComponent(lblUSD, GroupLayout.PREFERRED_SIZE, 81, GroupLayout.PREFERRED_SIZE))
-        							.addGap(36)))
-        					.addGap(18)
+        							.addGap(54))
+        						.addGroup(Alignment.TRAILING, layout.createSequentialGroup()
+        							.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        							.addComponent(lblRSD, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+        							.addGap(78)))
         					.addGroup(layout.createParallelGroup(Alignment.LEADING, false)
-        						.addComponent(txtEUR, GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
-        						.addComponent(txtUSD)
+        						.addComponent(txtUSD, GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
+        						.addComponent(txtEUR)
         						.addComponent(txtRSD)))
         				.addGroup(layout.createSequentialGroup()
         					.addGap(69)
@@ -148,16 +148,16 @@ public class FrmMain extends javax.swing.JFrame {
         			.addComponent(lblNewLabel)
         			.addGap(30)
         			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
-        				.addComponent(txtEUR, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-        				.addComponent(lblEUR, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE))
+        				.addComponent(txtUSD, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(lblUSD, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE))
         			.addGap(25)
         			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
-        				.addComponent(lblUSD, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
-        				.addComponent(txtUSD, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+        				.addComponent(txtEUR, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(lblEUR, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE))
         			.addGap(17)
         			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
-        				.addComponent(lblRSD, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
-        				.addComponent(txtRSD, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+        				.addComponent(txtRSD, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(lblRSD, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE))
         			.addPreferredGap(ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
         			.addComponent(lblUsername, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
         			.addGap(29))
@@ -191,8 +191,8 @@ public class FrmMain extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuItemClient;
     private javax.swing.JMenuItem menuItemRiskType;
     private javax.swing.JMenu menuMain;
-    private JTextField txtEUR;
     private JTextField txtUSD;
+    private JTextField txtEUR;
     private JTextField txtRSD;
     private JLabel lblEUR;
     private JLabel lblUSD;
@@ -218,14 +218,17 @@ public class FrmMain extends javax.swing.JFrame {
         return lblUsername;
     }
     
-    public JLabel getLblEUR() {
-    	return lblEUR;
+    public JTextField getTxtUSD() {
+    	txtUSD.setEditable(false);
+    	return txtUSD;
     }
-    public JLabel getLblUSD() {
-    	return lblUSD;
+    public JTextField gettxtEUR() {
+    	txtEUR.setEditable(false);
+    	return txtEUR;
     }
-    public JLabel getLblRSD() {
-    	return lblRSD;
+    public JTextField getTxtRSD() {
+    	txtRSD.setEditable(false);
+    	return txtRSD;
     }
 }
     
