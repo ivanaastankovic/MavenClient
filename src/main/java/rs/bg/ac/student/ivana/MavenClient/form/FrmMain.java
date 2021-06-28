@@ -111,6 +111,15 @@ public class FrmMain extends javax.swing.JFrame {
         lblRSD.setHorizontalAlignment(SwingConstants.CENTER);
         lblRSD.setFont(new Font("Consolas", Font.BOLD, 14));
         lblRSD.setBackground(new Color(204, 204, 204));
+        
+        lblCity = new JLabel();
+        lblCity.setText("Belgrade Temperature");
+        lblCity.setHorizontalAlignment(SwingConstants.CENTER);
+        lblCity.setFont(new Font("Consolas", Font.BOLD, 14));
+        lblCity.setBackground(new Color(204, 204, 204));
+        
+        lblTemperature = new JLabel("New label");
+        lblTemperature.setFont(new Font("Tahoma", Font.PLAIN, 15));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         layout.setHorizontalGroup(
@@ -118,46 +127,60 @@ public class FrmMain extends javax.swing.JFrame {
         		.addGroup(layout.createSequentialGroup()
         			.addGroup(layout.createParallelGroup(Alignment.LEADING)
         				.addGroup(layout.createSequentialGroup()
-        					.addGroup(layout.createParallelGroup(Alignment.LEADING, false)
-        						.addGroup(layout.createSequentialGroup()
-        							.addGap(134)
-        							.addGroup(layout.createParallelGroup(Alignment.LEADING)
-        								.addComponent(lblEUR, GroupLayout.PREFERRED_SIZE, 81, GroupLayout.PREFERRED_SIZE)
-        								.addComponent(lblUSD, GroupLayout.PREFERRED_SIZE, 81, GroupLayout.PREFERRED_SIZE))
-        							.addGap(54))
-        						.addGroup(Alignment.TRAILING, layout.createSequentialGroup()
-        							.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        							.addComponent(lblRSD, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-        							.addGap(78)))
-        					.addGroup(layout.createParallelGroup(Alignment.LEADING, false)
-        						.addComponent(txtUSD, GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
-        						.addComponent(txtEUR)
-        						.addComponent(txtRSD)))
-        				.addGroup(layout.createSequentialGroup()
-        					.addGap(69)
-        					.addComponent(lblUsername, GroupLayout.PREFERRED_SIZE, 728, GroupLayout.PREFERRED_SIZE))
-        				.addGroup(layout.createSequentialGroup()
         					.addGap(306)
-        					.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 173, GroupLayout.PREFERRED_SIZE)))
+        					.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 173, GroupLayout.PREFERRED_SIZE))
+        				.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        					.addGroup(layout.createSequentialGroup()
+        						.addContainerGap(134, Short.MAX_VALUE)
+        						.addGroup(layout.createParallelGroup(Alignment.TRAILING, false)
+        							.addGroup(layout.createSequentialGroup()
+        								.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        									.addComponent(lblEUR, GroupLayout.PREFERRED_SIZE, 81, GroupLayout.PREFERRED_SIZE)
+        									.addComponent(lblUSD, GroupLayout.PREFERRED_SIZE, 81, GroupLayout.PREFERRED_SIZE))
+        								.addGap(54))
+        							.addGroup(layout.createSequentialGroup()
+        								.addComponent(lblRSD, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+        								.addGap(78)))
+        						.addGroup(layout.createParallelGroup(Alignment.TRAILING)
+        							.addGroup(layout.createSequentialGroup()
+        								.addGroup(layout.createParallelGroup(Alignment.LEADING, false)
+        									.addComponent(txtUSD, GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
+        									.addComponent(txtEUR)
+        									.addComponent(txtRSD))
+        								.addGap(113)
+        								.addComponent(lblCity))
+        							.addGroup(layout.createSequentialGroup()
+        								.addComponent(lblTemperature)
+        								.addGap(13))))
+        					.addGroup(layout.createSequentialGroup()
+        						.addGap(69)
+        						.addComponent(lblUsername, GroupLayout.PREFERRED_SIZE, 728, GroupLayout.PREFERRED_SIZE))))
         			.addContainerGap(237, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
         	layout.createParallelGroup(Alignment.LEADING)
         		.addGroup(layout.createSequentialGroup()
-        			.addGap(29)
-        			.addComponent(lblNewLabel)
-        			.addGap(30)
-        			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
-        				.addComponent(txtUSD, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-        				.addComponent(lblUSD, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE))
-        			.addGap(25)
-        			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
-        				.addComponent(txtEUR, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-        				.addComponent(lblEUR, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE))
-        			.addGap(17)
-        			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
-        				.addComponent(txtRSD, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-        				.addComponent(lblRSD, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE))
+        			.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        				.addGroup(layout.createSequentialGroup()
+        					.addGap(29)
+        					.addComponent(lblNewLabel)
+        					.addGap(30)
+        					.addGroup(layout.createParallelGroup(Alignment.BASELINE)
+        						.addComponent(txtUSD, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        						.addComponent(lblUSD, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE))
+        					.addGap(25)
+        					.addGroup(layout.createParallelGroup(Alignment.BASELINE)
+        						.addComponent(txtEUR, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        						.addComponent(lblEUR, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE))
+        					.addGap(17)
+        					.addGroup(layout.createParallelGroup(Alignment.BASELINE)
+        						.addComponent(txtRSD, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        						.addComponent(lblRSD, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)))
+        				.addGroup(layout.createSequentialGroup()
+        					.addContainerGap()
+        					.addComponent(lblCity, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
+        					.addGap(18)
+        					.addComponent(lblTemperature)))
         			.addPreferredGap(ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
         			.addComponent(lblUsername, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
         			.addGap(29))
@@ -197,6 +220,8 @@ public class FrmMain extends javax.swing.JFrame {
     private JLabel lblEUR;
     private JLabel lblUSD;
     private JLabel lblRSD;
+    private JLabel lblCity;
+    private JLabel lblTemperature;
     // End of variables declaration//GEN-END:variables
 
     
@@ -230,6 +255,10 @@ public class FrmMain extends javax.swing.JFrame {
     	txtRSD.setEditable(false);
     	return txtRSD;
     }
+    public JLabel getlblTemp() {
+    	return lblTemperature;
+    }
+  
 }
     
     

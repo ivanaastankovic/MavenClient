@@ -13,9 +13,10 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.Socket;
 import java.net.URL;
+import java.net.URLConnection;
 import java.text.DecimalFormat;
 import java.util.LinkedList;
-
+import java.util.Map;
 //import com.google.code.gson;
 //import rs.bg.ac.student.ivana.MavenClient.main.JsonObject;
 import java.lang.reflect.Type;
@@ -23,6 +24,7 @@ import java.lang.reflect.Type;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
+import java.util.HashMap;
 
 public class MainController {
 	private FrmMain frmMain;
@@ -32,6 +34,10 @@ public class MainController {
 	private static final String SOURCE = "USD";
 	private static String[] CURRENCIES = new String[] { "EUR", "RSD" };
 
+	public static Map<String,Object> jsonToMap(String str){
+		Map<String, Object> map = new Gson().fromJson(str, new TypeToken<HashMap<String,Object>>() {}.getType());
+		return map;
+	}
 	public MainController(FrmMain frmMain) {
 		this.frmMain = frmMain;
 		addActionListener();
@@ -40,6 +46,25 @@ public class MainController {
 	public void openForm() {
 		frmMain.getLblUsername().setText((String) Cordinator.getInstance().getParam("ADMIN"));
 		frmMain.setVisible(true);
+		String urlString = "https://api.openweathermap.org/data/2.5/weather?id=792680&appid=cc8947c03622e461fc7787b4f0fe4ad5&units=metric";
+		try{
+			StringBuilder result = new StringBuilder();
+			URL url = new URL(urlString);
+			URLConnection conn = url.openConnection();
+			BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+			String line;
+			while((line=rd.readLine())!=null) {
+				result.append(line);
+			}
+			rd.close();
+			Map<String,Object> respMap = jsonToMap(result.toString());
+			Map<String,Object> mainMap = jsonToMap(respMap.get("main").toString());
+			Map<String, Object> windMap = jsonToMap(respMap.get("wind").toString());
+			frmMain.getlblTemp().setText(mainMap.get("temp").toString()+" °C");
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
 		frmMain.getTxtUSD().setText(Double.toString(1.00) + " $");
 
 		for (int i = 0; i < CURRENCIES.length; i++) {
@@ -71,6 +96,7 @@ public class MainController {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+			
 		}
 	}
 
