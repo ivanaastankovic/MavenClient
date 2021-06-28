@@ -98,16 +98,7 @@ public class Communication {
         }
     }
 
-    public void editClient(Client client) throws Exception {
-         Request request=new Request(Operation.EDIT_CLIENT, client);
-        sender.send(request);
-        Response response=(Response)receiver.receive();
-        if(response.getException()==null){
-            
-        }else{
-            throw response.getException();
-        }
-    }
+ 
 
     
 

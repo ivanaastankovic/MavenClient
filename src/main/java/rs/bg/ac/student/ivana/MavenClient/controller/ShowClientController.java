@@ -79,12 +79,13 @@ public class ShowClientController {
                 List<ClientContacts> contacts=model.getList();
                 Client client=(Client) Cordinator.getInstance().getParam("Client");
                 client.setContacts(contacts);
-                try {
-                    Communication.getInstance().editClient(client);
+               /* try {
+                    
                     JOptionPane.showMessageDialog(frmShowClient, "Client contacts edited successfully!");
                 } catch (Exception ex) {
                   JOptionPane.showMessageDialog(frmShowClient, "can not edit contacts!"+ex.getMessage(), "error", JOptionPane.ERROR_MESSAGE);
                 }
+                */
             }catch(Exception ex){
                 JOptionPane.showMessageDialog(frmShowClient, ex, "error", JOptionPane.ERROR_MESSAGE);
                    
